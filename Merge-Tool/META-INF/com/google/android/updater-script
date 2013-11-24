@@ -1,0 +1,12 @@
+ui_print("Installing Kernel");
+show_progress(0.500000, 0);
+mount("ext4", "EMMC", "/dev/block/stl12", "/system");
+assert(delete("/system/lib/modules/*"));
+package_extract_dir("system", "/system");
+show_progress(0.200000, 10);
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+       write_raw_image("/tmp/boot.img", "boot"),
+       delete("/tmp/boot.img"));
+show_progress(0.100000, 0);
+unmount("/system");
+

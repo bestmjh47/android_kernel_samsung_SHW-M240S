@@ -1,0 +1,3 @@
+post-build=Samsung/cm_cooper/cooper:4.2.2/JDQ39E/eng.jenkins.20130810.063000:userdebug/test-keys
+post-timestamp=1376109071
+pre-device=cooper
